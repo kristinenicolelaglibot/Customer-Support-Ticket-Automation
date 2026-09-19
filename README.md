@@ -8,7 +8,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 | Tool | Purpose |
 |---|---|
@@ -20,7 +20,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## ✨ Features
+## Features
 
 - **AI-powered classification** — every incoming message is analyzed and tagged with category (technical/billing/account/general), priority (Low–Urgent), sentiment, and a one-line summary.
 - **Automatic ticket creation** — every classified message is inserted as a structured row in a Postgres database, no manual data entry.
@@ -30,7 +30,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## 🧠 The Process — How I Built It
+## The Process — How I Built It
 
 1. **Mapped the manual process first.** Before automating anything, I broke down how a support ticket currently gets triaged — read the message, decide category, decide urgency, decide owner, notify someone. That became the blueprint for the pipeline.
 2. **Designed the flow in n8n:** `Webhook → Normalize → AI Classify → Parse → Assign → Create Ticket → Notify → Escalate`.
@@ -41,7 +41,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## 📚 What I Learned
+## What I Learned
 
 - How to design a multi-step AI classification pipeline with structured JSON output instead of free-form text.
 - Debugging real-world integration issues: SSL certificate chain errors between hosted tools (n8n Cloud ↔ Supabase pooler), API key scoping (workspace-scoped vs. unscoped keys), and mismatched response schemas when swapping AI providers.
@@ -50,7 +50,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## 🚧 How It Could Be Improved
+## How It Could Be Improved
 
 - **Add the email/IMAP channel** so support emails flow into the same pipeline as form/chat submissions (the original problem includes email as a source).
 - **Auto-reply to the customer** confirming their ticket was received, with a ticket number.
@@ -60,7 +60,7 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 
 ---
 
-## ▶️ How to Run This Project
+## How to Run This Project
 
 1. **Import the workflow** — open n8n → Workflows → Import from File → select `customer-support-automation.json` from this repo.
 2. **Set up Supabase:**
@@ -84,6 +84,6 @@ An n8n workflow that automatically classifies, prioritizes, and routes incoming 
 ---
 
 
-## 📄 License
+## License
 
 This project is open for learning and reference purposes.
